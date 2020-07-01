@@ -34,6 +34,11 @@ public class Employees {
 
                 line = input.nextLine();
 
+                // if the line variable has no data then re-iterate the loop to move on the next line
+                if (line.length() <= 0) {
+                    continue;
+                }
+
                 //proccess the line of text for each data item
                 try (Scanner data = new Scanner(line)) {
                     while (!data.hasNextInt()) {
@@ -54,7 +59,7 @@ public class Employees {
                 // check data
 //                System.out.println(empName+"\t"+empSalary+"\t"+empDeptId);
 
-//                saveData(); //call the method to save the data into the database
+                saveData(); //call the method to save the data into the database
             }
         } catch (IOException e) {
             System.out.println("e");
